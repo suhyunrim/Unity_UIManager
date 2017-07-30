@@ -98,12 +98,12 @@ public class UIManager : MonoBehaviour
     /// <summary>
     /// 정말 필요한 상황에만 사용할 것. 남발하면 코드가 꼬일 여지가 큼.
     /// </summary>
-    public static UI GetUI(Type type)
+    public static T GetUI<T>() where T : UI
     {
         foreach (UI ui in Instance.uiList)
         {
-            if (ui.GetType() == type)
-                return ui;
+            if (ui is T)
+                return (T)ui;
         }
 
         return null;
