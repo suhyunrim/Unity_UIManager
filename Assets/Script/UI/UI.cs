@@ -1,9 +1,7 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 using UnityEngine.UI;
-using System;
 
 public abstract class UI : MonoBehaviour
 {
@@ -24,11 +22,10 @@ public abstract class UI : MonoBehaviour
 
     public void Close()
     {
-        OnClose();
         UIManager.CloseUI(this);
     }
 
-    protected virtual void OnClose()
+    public virtual void OnClose()
     {
     }
 

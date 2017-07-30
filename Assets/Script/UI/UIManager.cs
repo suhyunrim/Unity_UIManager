@@ -84,6 +84,8 @@ public class UIManager : MonoBehaviour
 
     public static void CloseUI(UI ui)
     {
+        ui.OnClose();
+
         Instance.uiList.Remove(ui);
         if (Instance.uiModalList.Contains(ui))
         {
